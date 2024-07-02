@@ -28,4 +28,12 @@ public class Estudiantes {
     public String getSexo() {
         return sexo;
     }
-}
+    
+    public String getCedula() {
+        return cedula;
+    }
+
+    public String getCarrera() {
+        return carrera;
+    }
+    }

@@ -1,5 +1,7 @@
 package logica;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Becas {
 	private static final int MAX_ESTUDIANTES = 100;
@@ -28,5 +30,27 @@ public class Becas {
 
         return estudiantesBecados;
     }
+    
+    public Estudiantes buscarCedula(String cedula) {
+        for (Estudiantes estudiante : estudiantes) {
+            if (estudiante.getCedula().equals(cedula)) {
+                return estudiante;
+            }
+        }
+        return null;
+    }
 
+    public List<Estudiantes> buscarSexo(String sexo) {
+        return estudiantes.stream()
+            .filter(e -> e.getSexo().equals(sexo))
+            .collect(Collectors.toList());
+    }
+
+    public List<Estudiantes> buscarCarrera(String carrera) {
+        return estudiantes.stream()
+            .filter(e -> e.getCarrera().equals(carrera))
+            .collect(Collectors.toList());
+    }
 }
+
+
